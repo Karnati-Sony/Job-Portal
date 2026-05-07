@@ -109,6 +109,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
   e.preventDefault();
+  console.log(BASE_URL);
 
   if (!validateForm()) return;
 
