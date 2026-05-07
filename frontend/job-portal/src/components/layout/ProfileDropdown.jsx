@@ -1,5 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../../utils/apiPaths";
 
 const ProfileDropdown = ({
   isOpen,
@@ -16,8 +17,8 @@ const ProfileDropdown = ({
   if (!url) return "";
 
   return url.startsWith("http")
-    ? url
-    : `http://localhost:8000${url}`;
+  ? url
+  : `${BASE_URL}${url}`;
 };
 
 const imageUrl =

@@ -5,7 +5,7 @@ import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
 import toast from "react-hot-toast";
 import uploadImage from "../../utils/uploadImage";
-
+import { BASE_URL } from "../../utils/apiPaths";
 import DashboardLayout from "../../components/layout/DashboardLayout";
 import EditProfileDetails from "./EditProfileDetails";
 
@@ -176,7 +176,7 @@ const EmployerProfilePage = () => {
                         src={
                           profileData.avatar?.startsWith("http")
                             ? profileData.avatar
-                            : `http://localhost:8000${profileData.avatar}`
+                            : `${BASE_URL}${profileData.avatar}`
                         }
                         alt="Avatar"
                         className="w-20 h-20 rounded-full object-cover border-4 border-blue-500"
@@ -210,7 +210,7 @@ const EmployerProfilePage = () => {
                         src={
                           profileData.companyLogo?.startsWith("http")
                             ? profileData.companyLogo
-                            : `http://localhost:8000${profileData.companyLogo}`
+                            : `${BASE_URL}${profileData.companyLogo}`
                         }
                         alt="Company Logo"
                         className="w-20 h-20 rounded-lg object-cover border-4 border-blue-50"

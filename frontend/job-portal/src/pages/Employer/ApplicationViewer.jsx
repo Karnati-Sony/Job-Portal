@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import StatusBadge from "../../components/StatusBadge";
-
+import { BASE_URL } from "../../utils/apiPaths";
 import {
   Users,
   MapPin,
@@ -185,7 +185,7 @@ const ApplicationViewer = () => {
     src={
       application.applicant.avatar.startsWith("http")
         ? application.applicant.avatar
-        : `http://localhost:8000${application.applicant.avatar}`
+        : `${BASE_URL}${application.applicant.avatar}`
     }
     alt={application.applicant.name}
     className="h-12 w-12 rounded-full object-cover"
@@ -229,7 +229,7 @@ const ApplicationViewer = () => {
                                 onClick={() => {
                                   if (application.resume) {
                                     handleDownloadResume(
-                                      `http://localhost:8000${application.resume}`
+                                      `${BASE_URL}${application.resume}`
                                     );
                                   } else {
                                     alert("Resume not uploaded");

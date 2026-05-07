@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { BASE_URL, API_PATHS } from "../../utils/apiPaths";
 import {
   Mail,
   Lock,
@@ -78,7 +79,7 @@ const handleSubmit = async () => {
 
   try {
     const response = await axios.post(
-      "http://localhost:8000/api/auth/login",
+      `${BASE_URL}${API_PATHS.AUTH.LOGIN}`,
       {
         email: formData.email,
         password: formData.password,

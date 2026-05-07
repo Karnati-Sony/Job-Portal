@@ -1,6 +1,6 @@
 import { Save, X } from "lucide-react";
 import DashboardLayout from "../../components/layout/DashboardLayout";
-
+import { BASE_URL } from "../../utils/apiPaths";
 const EditProfileDetails = ({
   formData,
   handleImageChange,
@@ -35,7 +35,7 @@ const EditProfileDetails = ({
   src={
     formData.avatar?.startsWith("http")
       ? formData.avatar
-      : `http://localhost:8000${formData.avatar}`
+      : `${BASE_URL}${formData.avatar}`
   }
   alt="Avatar"
   className="w-20 h-20 rounded-full object-cover border-4 border-gray-200"
@@ -100,7 +100,7 @@ const EditProfileDetails = ({
   src={
     formData.companyLogo?.startsWith("http")
       ? formData.companyLogo
-      : `http://localhost:8000${formData.companyLogo}`
+      : `${BASE_URL}${formData.companyLogo}`
   }
   alt="Company Logo"
   className="w-20 h-20 rounded-lg object-cover border-4 border-gray-200"

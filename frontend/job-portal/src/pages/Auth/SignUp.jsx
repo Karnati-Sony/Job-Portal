@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
+import { BASE_URL } from "../../utils/apiPaths";
+import { API_PATHS } from "../../utils/apiPaths";
 import {
   User,
   Mail,
@@ -149,7 +151,7 @@ const SignUp = () => {
     }
 
     const res = await axios.post(
-      "http://localhost:8000/api/auth/register",
+     `${BASE_URL}${API_PATHS.AUTH.REGISTER}`,
       payload,
       {
         headers: {

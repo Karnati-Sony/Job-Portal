@@ -5,6 +5,7 @@ import moment from "moment";
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
 import toast from "react-hot-toast";
+import { BASE_URL } from "../../utils/apiPaths";
 
 import StatusBadge from "../StatusBadge";
 
@@ -80,7 +81,7 @@ const ApplicantProfilePreview = ({
     src={
       selectedApplicant.applicant.avatar.startsWith("http")
         ? selectedApplicant.applicant.avatar
-        : `http://localhost:8000${selectedApplicant.applicant.avatar}`
+        : `${BASE_URL}${selectedApplicant.applicant.avatar}`
     }
     alt={selectedApplicant.applicant.name}
     className="h-20 w-20 rounded-full object-cover mx-auto"
@@ -140,7 +141,7 @@ const ApplicantProfilePreview = ({
 
     <button
       onClick={() =>
-        handleDownloadResume( `http://localhost:8000/${selectedApplicant.resume}`)
+       handleDownloadResume(`${BASE_URL}/${selectedApplicant.resume}`)
       }
       className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
     >
